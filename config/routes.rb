@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'tags/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,6 +11,10 @@ Rails.application.routes.draw do
   get 'about' => 'about#index'
 
   resources :blogs
+
+  resources :tags, only: :show
+
+  resources :archives, only: [:show, :index]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,14 @@
+/- page_title 'articles'
+doctype html
+html
+  = render 'layouts/head'
+  body
+    =render 'shared/navigation_bar'
+    .container
+        div class='panel panel-default'
+          .panel-body
+            row
+              div class='col-md-9 col-lg-9'
+                = yield :pages
+              div class='col-md-9 col-lg-3'
+                = yield :widgets

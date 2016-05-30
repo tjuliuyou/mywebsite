@@ -1,0 +1,7 @@
+- content_for :pages do
+  div class='panel panel-article'
+    h3 
+      i class='fa fa-file-text' &nbsp;#{@blog.title}  
+  p #{@blog.content}
+    
+  /== markdown @article.content

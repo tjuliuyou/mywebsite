@@ -10,19 +10,12 @@
 
 - content_for :widgets do
   h3
-    small 标签
+    small 最新文章
   div class='panel panel-default'
     div class='panel-body'
-      - for tag in @tags
-        = link_to tag_path(tag) do
-          i class='fa fa-tag' &nbsp; #{tag.name}
-  h3
-    small 归档
-  div class='panel panel-default'
-    div class='panel-body'
-      - for archive in @archives
-        = link_to archive_path(archive) do
-          i class='fa fa-calendar' &nbsp; #{parse_archive_time_range archive.start_time}
+      / - for archive in @archives
+      /   = link_to archive_path(archive) do
+      /     i class='fa fa-calendar' &nbsp; #{parse_archive_time_range archive.start_time}
   / h3
   /   small 链接
   / div class='panel panel-default'
