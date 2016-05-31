@@ -2,26 +2,35 @@ class BlogsController < ApplicationController
   layout 'blogs'
   def index
     @archives = Archive.all
-    @blogs = Blog.where(:published => true)
-    @tags = Tag.all
+    #@blogs = Blog.where(:published => true)
+    @blogs = Blog.all
+    @tags = ActsAsTaggableOn::Tag.most_used(10)
 
     #code
   end
 
   def new
     @blog = Blog.new
-    #code
-    #Time.parse(t.to_s).strftime('%Y-%m-01 00:00:00')
   end
 
   def create
-    @blog = Blog.new(blog_params)
+    archive = Archive.last
+    if archive.nil? || archive.end_time > Time.now
+      archive = Archive.new(start_time: Date.today.at_beginning_of_month.to_s,
+       end_time: Date.today.at_end_of_month.to_s)
+      if !archive.save
+        render 'new'
+        return
+      end
+    end
+
+    @blog = archive.blogs.build(blog_params)
+
     if @blog.save
       redirect_to @blog
     else
       render 'new'
     end
-    #code
   end
 
   def update
@@ -53,7 +62,7 @@ class BlogsController < ApplicationController
 
   private
     def blog_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:title, :content,:tag_list)
     end
 
 end

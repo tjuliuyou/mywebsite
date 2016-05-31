@@ -1,12 +1,10 @@
 class TagsController < ApplicationController
   layout 'blogs'
-  # def index
-  # end
-
-  def show
-
-    @blogs = Tag.find(params[:id]).blogs
-    #code
+  def index
   end
 
+  def show
+    @tag =  ActsAsTaggableOn::Tag.find(params[:id])
+    @blogs = Blog.tagged_with(@tag.name)
+  end
 end

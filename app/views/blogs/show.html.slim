@@ -3,5 +3,24 @@
     h3 
       i class='fa fa-file-text' &nbsp;#{@blog.title}  
   p #{@blog.content}
+  / hr
+  / - for tag in @blog.tags
+  /   = link_to tag_path(tag) do
+  /     i class='fa fa-tag' &nbsp; #{tag.name}
+  hr
+  / div class='panel panel-article'
+  /   h3 
+  /     i class='fa fa-file-text' &nbsp;评论
+  - for comment in @blog.comments
+      h5 #{comment.commenter}
+      p &nbsp; #{comment.body}   
     
   /== markdown @article.content
+- content_for :widgets do
+  h3
+    small 标签
+  div class='panel panel-default'
+    div class='panel-body'
+      - for tag in @blog.tags
+        = link_to tag_path(tag) do
+          i class='fa fa-tag' &nbsp; #{tag.name}
