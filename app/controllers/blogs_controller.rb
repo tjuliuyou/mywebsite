@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
 
   def create
     archive = Archive.last
-    if archive.nil? || archive.end_time > Time.now
+    if archive.nil? || archive.end_time < Time.now
       archive = Archive.new(start_time: Date.today.at_beginning_of_month.to_s,
        end_time: Date.today.at_end_of_month.to_s)
       if !archive.save

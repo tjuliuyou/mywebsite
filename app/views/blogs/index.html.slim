@@ -15,7 +15,7 @@
     small 标签
   div class='panel panel-default'
     div class='panel-body'
-      = render 'tag',:tags => @tags
+      = render 'tag',tags: @tags
   h3
     small 归档
   div class='panel panel-default'
@@ -23,6 +23,7 @@
       - for archive in @archives
         = link_to archive_path(archive) do
           i class='fa fa-calendar' &nbsp; #{parse_archive_time_range archive.start_time}
+          br
   / h3
   /   small 链接
   / div class='panel panel-default'
