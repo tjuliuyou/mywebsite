@@ -2,7 +2,7 @@
   div class='panel panel-article'
     h3 
       i class='fa fa-file-text' &nbsp;#{@blog.title}  
-  p #{@blog.content}
+  = markdown @blog.content
   / hr
   / - for tag in @blog.tags
   /   = link_to tag_path(tag) do

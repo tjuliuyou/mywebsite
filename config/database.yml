@@ -20,6 +20,15 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+
+
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  database: postgres
+  pool: 5
+  timeout: 5000
+  username: postgres
+  host: 192.168.21.101
+  port: 5432
+  password: fuckme08

@@ -6,14 +6,13 @@
           i class='fa fa-file-text' &nbsp;
           | #{blog.title}
         small class='pull-right' #{parse_archive_time_range blog.created_at}
-    p
-      = blog.content
+      = markdown (brief_content blog.content)
     = link_to blog_path(blog) do
       button type='button' class='btn btn-primary pull-right' 全文
     br
     hr
     = render 'tag',tags: blog.tags
-    /== markdown (brief_content article.content)
+    
 
 - content_for :widgets do
   h3

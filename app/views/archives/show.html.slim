@@ -4,9 +4,7 @@
         h3 
           = link_to blog_path(blog) do
             i class='fa fa-file-text' &nbsp; #{blog.title}
-    p 
-      = blog.content
-    /== markdown (brief_content article.content)
+    = markdown (brief_content article.content)
 
 - content_for :widgets do
   h3

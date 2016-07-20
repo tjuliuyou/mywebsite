@@ -2,6 +2,8 @@
 doctype html
 html
   = render 'layouts/head'
+  style 
+    =Rouge::Themes::Base16.render(scope: '.highlight')
   body
     =render 'shared/navigation_bar'
     .container

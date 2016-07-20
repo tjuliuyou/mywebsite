@@ -30,6 +30,11 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'slim-rails', '~> 3.0.1'
 gem 'html2slim'
 
+# markdown render
+gem  'redcarpet', '~> 3.3.4'
+# code highlight
+# gem 'rouge', '~> 2.0.4'
+gem 'rouge'
 # bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
