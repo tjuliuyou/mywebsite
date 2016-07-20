@@ -1,11 +1,5 @@
 - content_for :pages do
-  - for blog in @blogs
-    div class='panel panel-article'
-        h3 
-          = link_to blog_path(blog) do
-            i class='fa fa-file-text' &nbsp; #{blog.title}
-    = markdown (brief_content article.content)
-
+  = render 'shared/blog_list', with_tag: false
 - content_for :widgets do
   h3
     small 最新文章
