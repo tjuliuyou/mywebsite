@@ -2,7 +2,9 @@
 source 'https://ruby.taobao.org/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.0.0'
+
+gem 'actionpack', '5.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -25,9 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 # Post tags
-gem 'acts-as-taggable-on', '~> 3.4'
+gem 'acts-as-taggable-on', '~> 4.0.0.pre'
 
-gem 'slim-rails', '~> 3.0.1'
+gem 'slim-rails', '~> 3.1.0'
 gem 'html2slim'
 
 # markdown render
