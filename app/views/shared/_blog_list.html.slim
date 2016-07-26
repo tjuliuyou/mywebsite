@@ -5,9 +5,10 @@
         i class='fa fa-file-text' &nbsp;
         | #{blog.title}
       small class='pull-right' #{parse_archive_time_range blog.created_at}
-    = markdown (brief_content blog.content)
-    = link_to blog_path(blog) do
-      button type='button' class='btn btn-primary pull-right' 全文
+  
+  = markdown (brief_content blog.content)
+  = link_to blog_path(blog) do
+    button type='button' class='btn btn-primary pull-right' 全文
   br
   hr
     = render 'tag',tags: blog.tags if with_tag
