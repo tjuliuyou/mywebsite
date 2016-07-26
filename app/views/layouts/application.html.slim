@@ -2,4 +2,10 @@ doctype html
 html
   = render 'layouts/head'
   body
+    -if notice
+      p.alert.alert-success
+        =notice
+    -if alert
+      p.alert.alert-danger
+        =alert
     = yield

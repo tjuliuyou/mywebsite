@@ -5,6 +5,12 @@ html
   style 
     =Rouge::Themes::Base16.render(scope: '.highlight')
   body
+    -if notice
+      p.alert.alert-success
+        =notice
+    -if alert
+      p.alert.alert-danger
+        =alert
     =render 'shared/navigation_bar'
     .container
         div class='panel panel-default'
