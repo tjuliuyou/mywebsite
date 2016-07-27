@@ -16,3 +16,7 @@
 !/log/.keep
 /tmp
 .keep
+
+# Ignore sensitive files
+config/database.yml
+config/secrets.yml
