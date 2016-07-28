@@ -34,11 +34,15 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
+set :passenger_restart_wait, 5
+set :passenger_restart_limit, 2
+set :passenger_restart_command, 'passenger-config restart-app'
 # Default value for keep_releases is 5
 set :keep_releases, 3
 
 namespace :deploy do
+
+
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -49,6 +53,8 @@ namespace :deploy do
     end
   end
 
+  after "deploy", "deploy:restart"
+  #after "deploy", "deploy:cleanup"
   # after :finish, 'deploy:clearup'
 
 end
