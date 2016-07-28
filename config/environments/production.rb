@@ -58,7 +58,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # devise configure
-  config.action_mailer.default_url_options = { host: 'billelon.io', port: 80 }
+  config.action_mailer.default_url_options = { host: '182.61.18.179', port: 80 }
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
