@@ -23,7 +23,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -58,7 +58,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # devise configure
-  config.action_mailer.default_url_options = { host: '182.61.18.179', port: 80 }
+  config.action_mailer.default_url_options = { host: 'sixyou.com', port: 80 }
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
