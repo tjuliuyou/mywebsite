@@ -5,7 +5,7 @@
 
 # server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
-server '182.61.18.179', user: 'bill', roles: %w{billelon.io}
+#server 'sixyou.com', user: 'bill', roles: %w{sixyou.com}
 
 
 
@@ -41,12 +41,24 @@ server '182.61.18.179', user: 'bill', roles: %w{billelon.io}
 #
 # Global options
 # --------------
- set :ssh_options, {
-   keys: %w(/Users/liuyou/.ssh/id_rsa),
-   forward_agent: false,
-   auth_methods: %w(password)
- }
-#
+ # set :ssh_options, {
+ #   keys: %w(/Users/liuyou/.ssh/id_rsa),
+ #   forward_agent: false,
+ #   auth_methods: %w(password)
+ # }
+
+
+ server 'sixyou.com',
+   user: 'bill',
+   roles: %w{my website app},
+   ssh_options: {
+     user: 'tjuliuyou', # overrides user setting above
+     paranoid: true,
+     keys: '/Users/liuyou/.ssh/id_rsa',
+     forward_agent: true,
+     auth_methods: %w(publickey password)
+     # password: 'please use keys'
+   }
 # The server-based syntax can be used to override options:
 # ------------------------------------
 # server '182.61.18.179',
