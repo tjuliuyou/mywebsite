@@ -12,7 +12,6 @@ set :branch , 'master'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/bill/rails-website'
 
 # Default value for :scm is :git
 set :scm, :git
@@ -49,9 +48,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-set :passenger_restart_wait, 5
-set :passenger_restart_limit, 2
-set :passenger_restart_command, 'passenger-config restart-app'
 # Default value for keep_releases is 5
 set :keep_releases, 3
 
