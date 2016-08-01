@@ -19,6 +19,9 @@ module MarkdownHelper
     #   # because when you not provide language in Markdown
     #   # you will get error: <RuntimeError: unknown lexer >
     # end
+    def table(header, body)
+      "<table class='table table-striped'><thead class='thead-default'>\n#{ header }</thead><tbody>\n#{ body }</tbody></table>\n"
+    end
   end
 
 
