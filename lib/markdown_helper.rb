@@ -36,11 +36,14 @@ module MarkdownHelper
     # autolink:           true,
     fenced_code_blocks: true,
     lax_spacing:        true,
+    footnotes:           true,
     no_intra_emphasis:  true,
     strikethrough:      true,
     superscript:        true,
     highlight:          true,
-    safe_links_only:    true
+    safe_links_only:    true,
+    space_after_headers: true,
+    tables:             true
     }
 
     Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
