@@ -1,14 +1,14 @@
 - for blog in @blogs
-  div class='panel panel-article'
+  .panel.panel-article
     h3
       = link_to blog_path(blog) do
-        i class='fa fa-file-text' &nbsp;
+        i.fa.fa-file-text &nbsp;
         | #{blog.title}
       small class='pull-right' #{parse_archive_time_range blog.created_at}
   
   = markdown (brief_content blog.content)
   = link_to blog_path(blog) do
-    button type='button' class='btn btn-primary pull-right' 全文
+    button.btn.btn-primary.pull-right type='button' 全文
   br
   hr
     = render 'tag',tags: blog.tags if with_tag

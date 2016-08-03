@@ -3,14 +3,14 @@
 - content_for :widgets do
   h3
     small 最新文章
-  div class='panel panel-default'
-    div class='panel-body'
+  .panel.panel-default
+    .panel-body'
       / - for archive in @archives
       /   = link_to archive_path(archive) do
       /     i class='fa fa-calendar' &nbsp; #{parse_archive_time_range archive.start_time}
   / h3
   /   small 链接
-  / div class='panel panel-default'
+  / .panel panel-default'
   /   div class='panel-body'
   /     = link_to archive_path(archive) do
   /       i class='fa fa-weixin' &nbsp; #{parse_archive_time_range archive.start_time}

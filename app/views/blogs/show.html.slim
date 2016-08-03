@@ -1,16 +1,16 @@
 - content_for :pages do
-  div class='panel panel-article'
+  .panel.panel-article
     h3 
-      i class='fa fa-file-text' &nbsp;#{@blog.title}  
+      i.fa.fa-file-text &nbsp;#{@blog.title}  
   = markdown @blog.content
   / hr
   / - for tag in @blog.tags
   /   = link_to tag_path(tag) do
-  /     i class='fa fa-tag' &nbsp; #{tag.name}
+  /     i.fa fa-tag' &nbsp; #{tag.name}
   hr
-  / div class='panel panel-article'
+  / div.panel panel-article'
   /   h3 
-  /     i class='fa fa-file-text' &nbsp;评论
+  /     i.fa fa-file-text' &nbsp;评论
   - for comment in @blog.comments
       h5 #{comment.commenter}
       p &nbsp; #{comment.body}   
@@ -19,8 +19,8 @@
 - content_for :widgets do
   h3
     small 标签
-  div class='panel panel-default'
-    div class='panel-body'
+  .panel.panel-default
+    .panel-body
       - for tag in @blog.tags
         = link_to tag_path(tag) do
-          i class='fa fa-tag' &nbsp; #{tag.name}
+          i.fa.fa-tag &nbsp; #{tag.name}
