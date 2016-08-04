@@ -1,3 +1,8 @@
+// 
+// blog brief
+// should with args 'with_tag' if with_tag is true 
+// blog list would render tags 
+//
 - for blog in @blogs
   .panel.panel-article
     h3
@@ -7,6 +12,8 @@
       small class='pull-right' #{parse_archive_time_range blog.created_at}
   
   = markdown (brief_content blog.content)
+  = link_to '编辑', edit_blog_path(blog), type: 'button', class:'btn btn-primary' if user_signed_in?
+  = link_to '删除', blog_path(blog), method: :delete, data: { confirm: 'Are you sure?' }, type: 'button', class:'btn btn-danger' if user_signed_in?
   = link_to blog_path(blog) do
     button.btn.btn-primary.pull-right type='button' 全文
   br

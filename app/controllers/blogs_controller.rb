@@ -54,9 +54,9 @@ class BlogsController < ApplicationController
     #code
   end
 
-  def destory
+  def destroy
     @blog = Blog.find(params[:id])
-    @blog.destory
+    @blog.destroy
     redirect_to blogs_path
     #code
   end
