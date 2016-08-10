@@ -1485,7 +1485,7 @@
     .on('click focusin', function(e) {
       blurNonFocused(e);
     })
-    .ready(function() {
+    .on('turbolinks:load',function() {
       $('textarea[data-provide="markdown"]').each(function() {
         initMarkdown($(this));
       });
