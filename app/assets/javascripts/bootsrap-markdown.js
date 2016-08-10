@@ -1477,6 +1477,8 @@
     });
   };
 
+  // @see http://guides.rubyonrails.org/working_with_javascript_in_rails.html
+
   $(document)
     .on('click.markdown.data-api', '[data-provide="markdown-editable"]', function(e) {
       initMarkdown($(this));
