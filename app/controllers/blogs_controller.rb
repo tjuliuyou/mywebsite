@@ -2,9 +2,9 @@ class BlogsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   layout 'blogs'
   def index
-    @archives = Archive.all
+    @archives = Archive.order(created_at: :desc).limit(10)
     #@blogs = Blog.where(:published => true)
-    @blogs = Blog.all
+    @blogs = Blog.order(created_at: :desc).limit(10)
     @tags = ActsAsTaggableOn::Tag.most_used(10)
 
     #code
